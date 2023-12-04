@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fick Principle</title>
+
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+    <script defer src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+    <style>
+        input[type=number] {
+            background-color: #8cf6e2;
+            border:black;
+            color: black;
+            font-weight: bold;
+        }
+        label {
+            color:white;
+            font-weight: bold;
+            width: 130px;
+            font-size:25px;
+            font-family:'Times New Roman';
+        }
+        nav {
+            width: 100%;
+            height:50px;
+            background-color: white;
+        }
+
+        ul li {
+            list-style: none;
+            display: inline-block;
+            line-height: 50px;
+        }
+        ul li a {
+            display:block;
+            text-decoration: none;
+            font-size:18px;
+            font-family: Georgia;
+            color: green;
+            padding:0 10px;
+            font-weight:bold;
+        }
+        ul li:hover{
+            background-color:pink;
+        }
+        h1{
+            text-align:center;
+            font-size:50px;
+            color:#8cf6e2;
+            font-family:georgia;
+        }
+        ul li a:hover{
+            color:red;
+        }
+        h2{
+            font-size:75px;
+            color: red;
+            margin-top:5px;
+            font-family:georgia;
+        }
+        body {
+        background-repeat:no-repeat;
+        background-size:cover;
+        background-attachment: fixed;
+        }
+        p{
+            font-size:30px;
+            color: white;
+            margin-top:5px;
+            font-family:'Times New Roman';
+        }
+        #submit-button {
+            background-color: #62529c;
+            border:black;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            margin: 4px 2px;
+            cursor:pointer;
+            font-size: 18px;
+        }
+    </style>
+    
+</head>
+<body background="https://i.pinimg.com/736x/f4/d0/b7/f4d0b71d62f9bb91f305ec14588c7881.jpg">
+    <img src="img.jpg" height="50" width="150" align="left">
+    <H2 align="center"><i>CARDIAC OUTPUT</i></H2><br>
+    <center>
+        <nav>
+            <ul>
+                <li><a href="dyedilution.html" target="mainpage">DYE DILUTION METHOD</a></li>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+                <li><a href="fick.html" target="mainpage">FICK's PRINCIPLE</a></li>
+            </ul>
+        </nav>
+    </center><br>
+    <h1><big>FICK's PRINCIPLE</big></h1>
+    <hr style="height:10px;border-width:0;color:white;background-color:white; width:100%"><br>
+    <center>
+        <form>
+            <label for="w">Enter weight in kg: </label>
+            <input type="number" step="0.01" id="w" name="w" ><br><br>
+            <label for="h">Enter height in inch: </label>
+            <input type="number" step="0.01" id="h" name="h" ><br><br>   
+            <label for="hb">Enter hemoglobin in g/dL: </label>
+            <input type="number" step="0.01" id="hb" name="hb" ><br><br>
+            <label for="a">Enter SaO2 (%): </label>
+            <input type="number" step="0.01" id="a" name="a" ><br><br>
+            <label for="b">Enter SvO2 (%): </label>
+            <input type="number" step="0.01" id="b" name="b" ><br><br>
+        </form>
+        <button type="button" id="submit-button">CALCULATE</button>
+    </center>
+    <br><br>
+    <center>
+        <p id='output'></p>
+        <p id='output2'></p>
+    </center>
+    <br>
+    <script>
+        document.getElementById('submit-button').addEventListener('click', function () {
+            var w= parseFloat(document.getElementById('w').value);
+            var h= parseFloat(document.getElementById('h').value);
+            var hb= parseFloat(document.getElementById('hb').value);
+            var a= parseFloat(document.getElementById('a').value);
+            var b= parseFloat(document.getElementById('b').value);
+
+            var bsa=0.024265*(Math.pow((h*2.54),0.3964))*(Math.pow(w,0.5378));
+            var co=((125*bsa*100)/(13*hb*(a-b)));
+            document.getElementById('output').textContent = "The cardiac output is: " + co + "L/min";
+            if( (co)<5 ){
+                document.getElementById('output2').textContent = "Caution! You should consult a doctor.";
+            }});
+    </script>
+    
+</body>
+</html>

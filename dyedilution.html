@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DYE DILUTION</title>
+
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+    <script defer src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+    <style>
+        input[type=number] {
+            background-color: #8cf6e2;
+            border:black;
+            color: black;
+            font-weight: bold;
+        }
+        label {
+            color:white;
+            font-weight: bold;
+            width: 130px;
+            font-size:25px;
+            font-family:'Times New Roman';
+        }
+        nav {
+            width: 100%;
+            height:50px;
+            background-color: white;
+        }
+
+        ul li {
+            list-style: none;
+            display: inline-block;
+            line-height: 50px;
+        }
+        ul li a {
+            display:block;
+            text-decoration: none;
+            font-size:18px;
+            font-family: Georgia;
+            color: green;
+            padding:0 10px;
+            font-weight:bold;
+        }
+        ul li:hover{
+            background-color:pink;
+        }
+        h1{
+            text-align:center;
+            font-size:50px;
+            color:#8cf6e2;
+            font-family:georgia;
+        }
+        ul li a:hover{
+            color:red;
+        }
+        h2{
+            font-size:75px;
+            color: red;
+            margin-top:5px;
+            font-family:georgia;
+        }
+        body {
+        background-repeat:no-repeat;
+        background-size:cover;
+        background-attachment: fixed;
+        }
+        p{
+            font-size:30px;
+            color: white;
+            margin-top:5px;
+            font-family:'Times New Roman';
+        }
+        #submit-button {
+            background-color: #62529c;
+            border:black;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            margin: 4px 2px;
+            cursor:pointer;
+            font-size: 18px;
+        }
+    </style>
+    
+</head>
+<body background="https://i.pinimg.com/736x/f4/d0/b7/f4d0b71d62f9bb91f305ec14588c7881.jpg">
+    <img src="img.jpg" height="75" width="150" align="left">
+    <H2 align="center"><i>CARDIAC OUTPUT</i></H2><br>
+    <center>
+        <nav>
+            <ul>
+                <li><a href="dyedilution.html" target="mainpage">DYE DILUTION METHOD</a></li>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+                <li><a href="fick.html" target="mainpage">FICK's PRINCIPLE</a></li>
+            </ul>
+        </nav>
+    </center><br>
+    <h1><big>DYE DILUTION METHOD</big></h1>
+    <hr style="height:10px;border-width:0;color:white;background-color:white; width:100%"><br>
+    <center>
+        <form>
+            <label for="w">Enter the amount of dye injected : </label>
+            <input type="number" step="0.01" id="w" name="w" ><br><br>
+            <label for="w1">Enter c(t) at t=0 : </label>
+            <input type="number" step="0.01" id="w1" name="w1" >&nbsp &nbsp &nbsp    
+            <label for="w2">Enter c(t) at t=1 : </label>
+            <input type="number" step="0.01" id="w2" name="w2" >&nbsp &nbsp &nbsp
+            <label for="w3">Enter c(t) at t=2 : </label>
+            <input type="number" step="0.01" id="w3" name="w3" ><br><br>
+            <label for="w4">Enter c(t) at t=3 : </label>
+            <input type="number" step="0.01" id="w4" name="w4" >&nbsp &nbsp &nbsp
+            <label for="w5">Enter c(t) at t=4 : </label>
+            <input type="number" step="0.01" id="w5" name="w5" >&nbsp &nbsp &nbsp
+            <label for="w6">Enter c(t) at t=5 : </label>
+            <input type="number" step="0.01" id="w6" name="w6" ><br><br>
+            <label for="w7">Enter c(t) at t=6 : </label>
+            <input type="number" step="0.01" id="w7" name="w7" >&nbsp &nbsp &nbsp
+            <label for="w8">Enter c(t) at t=7 : </label>
+            <input type="number" step="0.01" id="w8" name="w8" >&nbsp &nbsp &nbsp
+            <label for="w9">Enter c(t) at t=8 : </label>
+            <input type="number" step="0.01" id="w9" name="w9" ><br><br>
+            <label for="w10">Enter c(t) at t=9 : </label>
+            <input type="number" step="0.01" id="w10" name="w10" >&nbsp &nbsp &nbsp
+            <label for="w11">Enter c(t) at t=10: </label>
+            <input type="number" step="0.01" id="w11" name="w11" >&nbsp &nbsp &nbsp
+            <label for="w12">Enter c(t) at t=11: </label>
+            <input type="number" step="0.01" id="w12" name="w12" ><br><br>
+            <label for="w13">Enter c(t) at t=12: </label>
+            <input type="number" step="0.01" id="w13" name="w13" >&nbsp &nbsp &nbsp
+            <label for="w14">Enter c(t) at t=13: </label>
+            <input type="number" step="0.01" id="w14" name="w14" >&nbsp &nbsp &nbsp   
+            <label for="w15">Enter c(t) at t=14: </label>
+            <input type="number" step="0.01" id="w15" name="w15" ><br><br>
+            <label for="w16">Enter c(t) at t=15: </label>
+            <input type="number" step="0.01" id="w16" name="w16" >&nbsp &nbsp &nbsp
+            <label for="w17">Enter c(t) at t=16: </label>
+            <input type="number" step="0.01" id="w17" name="w17" >&nbsp &nbsp &nbsp
+            <label for="w18">Enter c(t) at t=17: </label>
+            <input type="number" step="0.01" id="w18" name="w18" ><br><br>
+            <label for="w19">Enter c(t) at t=18: </label>
+            <input type="number" step="0.01" id="w19" name="w19" >&nbsp &nbsp &nbsp
+            <label for="w20">Enter c(t) at t=19: </label>
+            <input type="number" step="0.01" id="w20" name="w20" >&nbsp &nbsp &nbsp
+            <label for="w21">Enter c(t) at t=20: </label>
+            <input type="number" step="0.01" id="w21" name="w21" ><br><br>
+            <label for="w22">Enter c(t) at t=21: </label>
+            <input type="number" step="0.01" id="w22" name="w22" >&nbsp &nbsp &nbsp
+            <label for="w23">Enter c(t) at t=22: </label>
+            <input type="number" step="0.01" id="w23" name="w23" >&nbsp &nbsp &nbsp
+            <label for="w24">Enter c(t) at t=23: </label>
+            <input type="number" step="0.01" id="w24" name="w24" ><br><br>
+            <label for="w25">Enter c(t) at t=24: </label>
+            <input type="number" step="0.01" id="w25" name="w25" ><br><br>
+        </form>
+        <button type="button" id="submit-button">Plot Graph and Calculate CARDIAC OUTPUT</button>
+    </center>
+
+    <br>
+    <center>
+    <p id='output'></p>
+    <p id='output2'></p>
+    <p id='output3'></p>
+    </center>
+    <br>
+    <div id="chart-container"></div>
+    <script>
+        // Define the whcalc function in JavaScript
+        document.getElementById('submit-button').addEventListener('click', function () {
+            var c = parseFloat(document.getElementById('w').value);
+            var a = [];
+            var slope = [];
+            var s = 0;
+            var j = 0;
+            for (var i = 1; i <= 25; i++) {
+                a.push(parseFloat(document.getElementById('w' + i).value));
+            }
+            // Calculate slope
+            for (var i = 0; i < 24; i++) {
+                slope.push(a[i + 1] - a[i]);
+            }
+            
+            // Find the index where slope changes from negative to positive
+            for (var i = 0; i < 24; i++) {
+                if (slope[i] < 0 && slope[i + 1] > 0) {
+                    j = i;
+                    s = slope[i];
+                    break;
+                }
+            }
+            
+            // Update values in array 'a'
+            var i=j;
+            while (a[i]>0) {
+                i++;
+
+                if ((s + a[i - 1])>0){
+                    a[i] = s + a[i - 1];
+                }
+            }
+      plotGraphAndCalculateArea(c, a,i);});
+        
+
+        function plotGraphAndCalculateArea(c, a, n) {
+            // Calculate Simpson's integral
+            var b = Array.from({ length: 25 }, (_, i) => i); // Generate array [0, 1, 2, ..., 24]
+            var d = Array.from({ length: (n+1) }, (_, i) => i); // Generate array [0, 1, 2, ..., 24]
+            var simpsonIntegral =simpsonsRule(b,a);
+            // Display results
+            document.getElementById('output').textContent = "The Simpson's integral is: " + simpsonIntegral;
+            document.getElementById('output2').textContent = "The cardiac output is: " + (c / simpsonIntegral*60) + "L/min";
+            if( (c / simpsonIntegral*60)<5 ){
+                document.getElementById('output3').textContent = "Caution! You should consult a doctor.";
+            }
+            const trace = {
+                x: d,
+                y: a,
+                type: 'scatter',
+                mode: 'lines',
+                name: 'Concentration vs Time'
+            };
+
+            const layout = {
+                title: 'Dye Concentration Over Time',
+                xaxis: {
+                title: 'Time (s)'
+                },
+                yaxis: {
+                title: 'Concentration'
+                }
+            };
+
+            Plotly.newPlot('chart-container', [trace], layout);
+        }
+
+        function simpsonsRule(x, y) {
+            const n = x.length - 1;
+            const h = (x[n] - x[0]) / n;
+            let result = y[0] + y[n];
+
+            for (let i = 1; i < n; i += 2) {
+                result += 4 * y[i];
+            }
+
+            for (let i = 2; i < n - 1; i += 2) {
+                result += 2 * y[i];
+            }
+
+            return (h / 3) * result;
+        }
+    </script>
+    
+</body>
+</html>
